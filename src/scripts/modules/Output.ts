@@ -2,6 +2,7 @@
 
 import { WebGLUtility, ShaderProgram } from '../lib/webgl';
 import Common from './Common';
+import Pointer from './Pointer';
 import Gui, { Options } from './Gui';
 import base_vert from '../../shaders/vert/base.vert?raw';
 import output_frag from '../../shaders/frag/output.frag?raw';
@@ -29,7 +30,7 @@ export default class Output {
         this.options = {
             timeScale: Common.timeScale,
             isHoge: false,
-        }
+        };
         this.gui = new Gui(this.options);
     }
 
@@ -51,6 +52,7 @@ export default class Output {
         };
 
         this.load();
+        Pointer.init();
     }
 
     /**
@@ -68,10 +70,14 @@ export default class Output {
             // prettier-ignore
             uniform: [
                 'uTime',
+                'uResolution',
+                'uPointer',
             ],
             // prettier-ignore
             type: [
                 'uniform1f',
+                'uniform2fv',
+                'uniform2fv',
             ],
         });
     }
@@ -102,7 +108,11 @@ export default class Output {
 
             this.shaderProgram.setAttribute(this.plane.vbo);
 
-            this.shaderProgram.setUniform([Common.uTime]);
+            this.shaderProgram.setUniform([
+                Common.uTime,
+                [Common.canvas.width, Common.canvas.height],
+                [Pointer.coords.x, Pointer.coords.y],
+            ]);
 
             gl.drawArrays(gl.TRIANGLE_STRIP, 0, this.plane.position.length / 3);
         } catch (error) {

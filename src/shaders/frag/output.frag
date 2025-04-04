@@ -1,6 +1,8 @@
 precision mediump float;
 
 uniform float uTime;
+uniform vec2 uPointer;
+uniform vec2 uResolution;
 varying vec2 vTexCoord;
 
 void main() {
