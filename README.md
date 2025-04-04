@@ -9,7 +9,7 @@ This repository is a template for developing GLSL-based projects with Vite.
 1. **Clone this repository:**
 
     ```bash
-    git clone git@github.com:koji014/glsl-template.git your-project-name
+    git clone https://github.com/koji014/glsl-template.git your-project-name
     cd your-project-name
     ```
 
