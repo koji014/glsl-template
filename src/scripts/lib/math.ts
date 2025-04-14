@@ -227,10 +227,10 @@ class Mat4 {
     }
     /**
      * 行列を乗算する（参照に注意・戻り値としても結果を返す）
-     * @param {MathTypes['mat4']} mat0 - 乗算される行列
-     * @param {MathTypes['mat4']} mat1 - 乗算する行列
+     * @param {MathTypes['mat4']} mat0 - 乗算する行列（左から掛かる）
+     * @param {MathTypes['mat4']} mat1 - 被乗算行列
      * @param {MathTypes['mat4']} [dest] - 乗算結果を格納する行列
-     * @return {MathTypes['mat4']} 乗算結果の行列
+     * @return {MathTypes['mat4']} 乗算結果の行列 = mat0 * mat1
      */
     static multiply(mat0: MathTypes['mat4'], mat1: MathTypes['mat4'], dest?: MathTypes['mat4']): MathTypes['mat4'] {
         const out = dest == null ? Mat4.create() : dest;
