@@ -10,9 +10,9 @@ interface PointerCoords {
 class Pointer {
     pointerMoved: boolean;
     coords: PointerCoords;
-    prevCoords: PointerCoords;
+    private prevCoords: PointerCoords;
     diff: PointerCoords;
-    timer: number | null;
+    private timer: number | null;
 
     /**
      * #@constructor

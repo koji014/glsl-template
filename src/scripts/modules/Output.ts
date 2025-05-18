@@ -15,10 +15,10 @@ interface Geometry {
 }
 
 export default class Output {
-    plane: Geometry | null;
-    shaderProgram: ShaderProgram | null;
-    options: Options;
-    gui: Gui;
+    private plane: Geometry | null;
+    private shaderProgram: ShaderProgram | null;
+    private readonly options: Options;
+    private readonly gui: Gui;
 
     /**
      * #@constructor
@@ -52,7 +52,6 @@ export default class Output {
         };
 
         this.load();
-        Pointer.init();
     }
 
     /**
@@ -109,9 +108,9 @@ export default class Output {
             this.shaderProgram.setAttribute(this.plane.vbo);
 
             this.shaderProgram.setUniform([
-                Common.uTime,
-                [Common.canvas.width, Common.canvas.height],
-                [Pointer.coords.x, Pointer.coords.y],
+                Common.time,
+                new Float32Array([Common.canvas.width, Common.canvas.height]),
+                new Float32Array([Pointer.coords.x, Pointer.coords.y]),
             ]);
 
             gl.drawArrays(gl.TRIANGLE_STRIP, 0, this.plane.position.length / 3);

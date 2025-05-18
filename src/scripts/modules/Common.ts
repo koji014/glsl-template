@@ -5,10 +5,10 @@ class Common {
     gl: WebGLRenderingContext | null;
     running: boolean;
     previousTime: number;
-    timeScale: number;
     currentTime: number;
-    uTime: number;
-    devicePixelRatio: number;
+    time: number;
+    timeScale: number;
+    readonly devicePixelRatio: number;
 
     /**
      * #@constructor
@@ -18,9 +18,9 @@ class Common {
         this.gl = null;
         this.running = false;
         this.previousTime = 0;
-        this.timeScale = 1.0;
         this.currentTime = 0.0;
-        this.uTime = 0.0;
+        this.time = 0.0;
+        this.timeScale = 1.0;
         this.devicePixelRatio = window.devicePixelRatio;
     }
 
@@ -117,7 +117,7 @@ class Common {
         const now = Date.now();
         const deltaTime = (now - this.previousTime) / 1000;
         this.currentTime += deltaTime;
-        this.uTime += deltaTime * this.timeScale;
+        this.time += deltaTime * this.timeScale;
         this.previousTime = now;
     }
 }

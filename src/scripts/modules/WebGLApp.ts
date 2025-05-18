@@ -1,15 +1,16 @@
 /** @format */
 import Common from './Common';
+import Pointer from './Pointer';
 import Output from './Output';
 
 export default class WebGLApp {
-    private output: Output | null;
+    private readonly output: Output;
 
     /**
      * #@constructor
      */
     constructor() {
-        this.output = null;
+        this.output = new Output();
 
         this.resize = this.resize.bind(this);
         this.render = this.render.bind(this);
@@ -24,8 +25,7 @@ export default class WebGLApp {
      */
     init(canvas: HTMLCanvasElement | string, option: WebGLContextAttributes = {}) {
         Common.init(canvas, option);
-
-        this.output = new Output();
+        Pointer.init();
         this.output.init();
     }
 
@@ -47,7 +47,7 @@ export default class WebGLApp {
         }
 
         Common.update();
-        this.output?.update();
+        this.output.update();
     }
 
     /**
@@ -55,6 +55,6 @@ export default class WebGLApp {
      */
     private resize() {
         Common.resize();
-        // this.output?.resize();
+        // this.output.resize();
     }
 }

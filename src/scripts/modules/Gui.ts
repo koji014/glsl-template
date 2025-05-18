@@ -13,8 +13,8 @@ type Color = {
 };
 
 export default class Gui {
-    private options?: Options;
-    private fps?: EssentialsPlugin.FpsGraphBladeApi;
+    private readonly options?: Options;
+    private readonly fps?: EssentialsPlugin.FpsGraphBladeApi;
 
     /**
      * #@constructor
