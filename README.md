@@ -1,8 +1,8 @@
 <!-- @format -->
 
-# GLSL Works Template with Vite
+# GLSL Works Template
 
-This repository is a template for developing GLSL-based projects with Vite.
+This repository is a template for developing GLSL-based projects.
 
 ## Getting Started
 
