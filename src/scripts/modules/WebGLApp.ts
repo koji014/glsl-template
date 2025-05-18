@@ -7,7 +7,7 @@ export default class WebGLApp {
     private readonly output: Output;
 
     /**
-     * #@constructor
+     * @constructor
      */
     constructor() {
         this.output = new Output();
@@ -19,7 +19,7 @@ export default class WebGLApp {
     }
 
     /**
-     * #初期化処理
+     * # 初期化処理
      * @param {HTMLCanvasElement|string} canvas - canvas への参照か canvas の id 属性値のいずれか
      * @param {WebGLContextAttributes} [option={}] - WebGL コンテキストの初期化オプション
      */
@@ -30,7 +30,7 @@ export default class WebGLApp {
     }
 
     /**
-     * #WebGL のレンダリングを開始する前のセットアップを行う。
+     * # WebGL のレンダリングを開始する前のセットアップを行う。
      */
     setup() {
         Common.setup();
@@ -39,7 +39,7 @@ export default class WebGLApp {
     }
 
     /**
-     * #WebGL を利用して描画を行う。
+     * # WebGL を利用して描画を行う。
      */
     render() {
         if (Common.running === true) {
@@ -51,7 +51,7 @@ export default class WebGLApp {
     }
 
     /**
-     * #リサイズ処理を行う。
+     * # リサイズ処理を行う。
      */
     private resize() {
         Common.resize();

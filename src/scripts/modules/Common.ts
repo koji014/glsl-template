@@ -11,7 +11,7 @@ class Common {
     readonly devicePixelRatio: number;
 
     /**
-     * #@constructor
+     * @constructor
      */
     constructor() {
         this.canvas = null;
@@ -25,7 +25,7 @@ class Common {
     }
 
     /**
-     * #WebGL を実行するための初期化処理を行う
+     * # WebGL を実行するための初期化処理を行う
      * @param {HTMLCanvasElement|string} canvas - canvas への参照か canvas の id 属性値のいずれか
      * @param {WebGLContextAttributes} [option={}] - WebGL コンテキストの初期化オプション
      */
@@ -48,7 +48,7 @@ class Common {
     }
 
     /**
-     * #WebGL のレンダリングを開始する前のセットアップを行う
+     * # WebGL のレンダリングを開始する前のセットアップを行う
      */
     setup() {
         if (!this.gl) return;
@@ -102,7 +102,7 @@ class Common {
     }
 
     /**
-     * #リサイズ処理を行う
+     * # リサイズ処理を行う
      */
     resize() {
         if(!this.canvas) return;
@@ -111,7 +111,7 @@ class Common {
     }
 
     /**
-     * #更新処理を行う
+     * # rAF で実行する更新処理
      */
     update() {
         const now = Date.now();

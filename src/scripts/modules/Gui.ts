@@ -17,7 +17,7 @@ export default class Gui {
     private readonly fps?: EssentialsPlugin.FpsGraphBladeApi;
 
     /**
-     * #@constructor
+     * @constructor
      */
     constructor(options?: Options) {
         this.options = options;
@@ -44,7 +44,7 @@ export default class Gui {
     }
 
     /**
-     * #FPSを更新する
+     * # FPSを更新する
      */
     private updateFps() {
         if (this.fps) {
@@ -54,7 +54,7 @@ export default class Gui {
     }
 
     /**
-     * #RAF で実行する更新処理
+     * # rAF で実行する更新処理
      */
     update() {
         this.updateFps();

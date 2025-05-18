@@ -21,7 +21,7 @@ export default class Output {
     private readonly gui: Gui;
 
     /**
-     * #@constructor
+     * @constructor
      */
     constructor() {
         this.plane = null;
@@ -35,7 +35,7 @@ export default class Output {
     }
 
     /**
-     * #最終出力シーン描画の準備
+     * # 最終出力シーン描画の準備
      */
     init() {
         if (!Common.gl) return;
@@ -55,7 +55,7 @@ export default class Output {
     }
 
     /**
-     * #シェーダを読み込む
+     * # シェーダを読み込む
      */
     private load() {
         if (!Common.gl || !this.plane) return;
@@ -82,12 +82,12 @@ export default class Output {
     }
 
     /**
-     * #リサイズ処理を行う
+     * # リサイズ処理を行う
      */
     // resize() {}
 
     /**
-     * #最終出力シーンの描画
+     * # 最終出力シーンの描画
      */
     private render() {
         if (!Common.gl || !Common.canvas || !this.shaderProgram || !this.plane) {
@@ -120,7 +120,7 @@ export default class Output {
     }
 
     /**
-     * #RAF で実行する更新処理
+     * # rAF で実行する更新処理
      */
     update() {
         this.render();

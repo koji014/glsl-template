@@ -15,7 +15,7 @@ class Pointer {
     private timer: number | null;
 
     /**
-     * #@constructor
+     * @constructor
      */
     constructor() {
         this.pointerMoved = false;
@@ -29,7 +29,7 @@ class Pointer {
     }
 
     /**
-     * #イベントリスナーの登録を行う
+     * # イベントリスナーの登録を行う
      */
     init() {
         document.body.addEventListener('pointermove', this.onPointerMove, false);
@@ -37,7 +37,7 @@ class Pointer {
     }
 
     /**
-     * #座標の設定を行う
+     * # 座標の設定を行う
      * @param {number} x - ポインタの x 座標
      * @param {number} y - ポインタの y 座標
      */
@@ -62,7 +62,7 @@ class Pointer {
     }
 
     /**
-     * #ポインター操作時の処理
+     * # ポインター操作時の処理
      * @param {PointerEvent} e - イベントオブジェクト
      */
     onPointerMove(e: PointerEvent) {
@@ -77,7 +77,7 @@ class Pointer {
     }
 
     /**
-     * #タッチデバイス用の操作判定（画面をタッチした時の処理）
+     * # タッチデバイス用の操作判定（画面をタッチした時の処理）
      * @param {PointerEvent} e - イベントオブジェクト
      */
     onPointerDown(e: PointerEvent) {
@@ -87,7 +87,7 @@ class Pointer {
     }
 
     /**
-     * #ポインタ座標の差分を更新
+     * # ポインタ座標の差分を更新
      */
     update() {
         this.diff = {
